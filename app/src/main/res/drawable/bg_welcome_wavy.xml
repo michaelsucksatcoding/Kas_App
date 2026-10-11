@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="400dp"
+    android:height="800dp"
+    android:viewportWidth="400"
+    android:viewportHeight="800">
+
+    <!-- Gradient Background (Light Theme) -->
+    <path android:pathData="M0,0 H400 V800 H0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="400"
+                android:endY="800"
+                android:type="linear">
+                <item android:color="@color/md_theme_light_primaryContainer" android:offset="0.0" />
+                <item android:color="@color/md_theme_light_primary" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Organic Wave Overlays -->
+    <path
+        android:fillColor="@color/translucent_white"
+        android:pathData="M0,600 Q100,550 200,600 T400,600 V800 H0 Z" />
+    <path
+        android:fillColor="@color/translucent_white"
+        android:pathData="M0,650 Q150,600 300,700 T400,650 V800 H0 Z" />
+
+</vector>

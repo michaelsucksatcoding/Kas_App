@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ClassFund</string>
+    <string name="welcome_back">Selamat datang kembali!</string>
+    <string name="fund_report">Laporan Dana</string>
+    <string name="fund_data">Data Dana</string>
+    <string name="fund_data_subtitle">Kelola siswa dan pembayaran</string>
+    <string name="fund_report_subtitle">Lihat catatan keuangan</string>
+    <string name="credits_title">Kredit</string>
+    <string name="credits_subtitle">Tim pengembang</string>
+    <string name="action_open">Buka</string>
+
+    <!-- Amount validation feedback -->
+    <string name="error_amount_empty">Masukkan nominal</string>
+    <string name="error_amount_not_a_number">Gunakan angka saja, contoh 50000</string>
+    <string name="error_amount_not_positive">Nominal harus lebih dari 0</string>
+    <string name="error_amount_too_large">Nominal terlalu besar</string>
+
+    <!-- Field validation feedback -->
+    <string name="error_description_empty">Masukkan deskripsi</string>
+    <string name="error_student_name_empty">Masukkan nama siswa</string>
+
+    <!-- Persistence feedback -->
+    <string name="error_save_failed">Gagal menyimpan. Coba lagi.</string>
+
+    <!-- Payment screen -->
+    <string name="error_select_month_and_year">Pilih bulan dan tahun</string>
+    <string name="payment_saved">Pembayaran tersimpan</string>
+    <string name="title_edit_payment">Ubah Pembayaran</string>
+    <string name="title_delete_payment">Hapus Pembayaran</string>
+    <string name="confirm_delete_payment">Hapus catatan pembayaran ini?</string>
+    <string name="payment_updated">Pembayaran diperbarui</string>
+    <string name="payment_deleted">Pembayaran dihapus</string>
+    <string name="action_edit">Ubah</string>
+    <string name="action_delete">Hapus</string>
+
+    <!-- Ledger dialog -->
+    <string name="error_select_ledger_type">Pilih kredit atau debit</string>
+    <string name="error_insufficient_balance">Saldo tidak mencukupi</string>
+    <string name="title_add_ledger">Tambah Catatan Kas</string>
+    <string name="title_edit_ledger">Ubah Catatan Kas</string>
+    <string name="title_delete_ledger">Hapus Transaksi</string>
+    <string name="confirm_delete_ledger">Hapus catatan transaksi ini?</string>
+    <string name="ledger_updated">Transaksi diperbarui</string>
+    <string name="ledger_deleted">Transaksi dihapus</string>
+    <string name="hint_date">Tanggal</string>
+    <string name="hint_description">Deskripsi</string>
+    <string name="hint_amount">Nominal</string>
+    <string name="label_transaction_type">Tipe Transaksi</string>
+    <string name="label_credit">Kredit (Pengeluaran)</string>
+    <string name="label_debit">Debit (Pemasukan)</string>
+    <string name="cd_payment_actions">Opsi pembayaran</string>
+    <string name="cd_ledger_actions">Opsi transaksi</string>
+
+    <!-- Balance (report header) -->
+    <string name="balance_label">Saldo saat ini</string>
+    <string name="total_income_label">Total Pemasukan %1$s</string>
+    <string name="total_expense_label">Total Pengeluaran %1$s</string>
+    <string name="balance_placeholder">—</string>
+    <string name="error_load_balance_failed">Gagal memuat saldo</string>
+
+    <!-- Student management -->
+    <string name="action_edit_student">Ubah nama</string>
+    <string name="action_delete_student">Hapus</string>
+    <string name="action_save">Simpan</string>
+    <string name="cancel">Batal</string>
+    <string name="title_edit_student">Ubah Siswa</string>
+    <string name="title_delete_student">Hapus Siswa</string>
+    <string name="title_delete_blocked">Siswa tidak dihapus</string>
+    <string name="student_updated">Data siswa diperbarui</string>
+    <string name="student_deleted">Siswa dihapus</string>
+    <string name="error_update_student_failed">Gagal memperbarui siswa</string>
+    <string name="error_delete_student_failed">Gagal menghapus siswa</string>
+    <string name="confirm_delete_student_no_history">Hapus %1$s dari daftar siswa? Siswa ini tidak memiliki riwayat pembayaran.</string>
+    <plurals name="error_student_has_history">
+        <item quantity="one">Siswa ini memiliki %1$d catatan pembayaran. Riwayat pembayaran adalah data keuangan dan tidak pernah dihapus, sehingga data siswa dipertahankan.</item>
+        <item quantity="other">Siswa ini memiliki %1$d catatan pembayaran. Riwayat pembayaran adalah data keuangan dan tidak pernah dihapus, sehingga data siswa dipertahankan.</item>
+    </plurals>
+
+    <!-- Content descriptions -->
+    <string name="cd_student_avatar">Siswa</string>
+    <string name="cd_student_open">Buka riwayat pembayaran</string>
+    <string name="cd_student_actions">Opsi siswa</string>
+
+    <!-- Profile popup -->
+    <string name="profile_title">ClassFund</string>
+    <string name="profile_admin">Admin</string>
+    <string name="action_log_out">Keluar</string>
+    <string name="message_logged_out">Berhasil keluar</string>
+    <string name="setting_dark_mode">Mode Gelap</string>
+    <string name="setting_language">Bahasa</string>
+    <string name="lang_en">EN</string>
+    <string name="lang_id">ID</string>
+    <string name="cd_profile_menu">Buka menu profil</string>
+    <string name="cd_close">Tutup</string>
+</resources>

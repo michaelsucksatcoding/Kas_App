@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The form is wrapped in a NestedScrollView so the sheet can shrink and scroll
+  when the numeric keyboard reduces the visible height, instead of squashing
+  the fixed-height fields and pushing "Save Payment" off-screen. With the
+  keyboard hidden the scroll view wraps its content, so the sheet looks exactly
+  as before.
+-->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvStudentNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student Name"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface" />
+
+        <TextView
+            android:id="@+id/tvPaymentHistoryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Payment History"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:letterSpacing="0.1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPaymentHistory"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/item_payment" />
+
+        <View
+            android:id="@+id/viewFormDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="24dp"
+            android:background="?attr/colorOutlineVariant" />
+
+        <TextView
+            android:id="@+id/tvAddPaymentLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Payment"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:letterSpacing="0.1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinnerMonth"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rounded_input" />
+
+            <Spinner
+                android:id="@+id/spinnerYear"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_rounded_input" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Amount (Rp)"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSavePayment"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:text="Save Payment"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

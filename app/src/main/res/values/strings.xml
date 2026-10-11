@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">ClassFund</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="fund_report">Fund Report</string>
+    <string name="fund_data">Fund Data</string>
+    <string name="fund_data_subtitle">Manage students and payments</string>
+    <string name="fund_report_subtitle">View financial ledger</string>
+    <string name="credits_title">Credits</string>
+    <string name="credits_subtitle">Meet the team</string>
+    <string name="action_open">Open</string>
+
+    <!-- Amount validation feedback -->
+    <string name="error_amount_empty">Enter an amount</string>
+    <string name="error_amount_not_a_number">Use digits only, for example 50000</string>
+    <string name="error_amount_not_positive">Amount must be greater than 0</string>
+    <string name="error_amount_too_large">Amount is too large</string>
+
+    <!-- Field validation feedback -->
+    <string name="error_description_empty">Enter a description</string>
+    <string name="error_student_name_empty">Enter a student name</string>
+
+    <!-- Persistence feedback -->
+    <string name="error_save_failed">Could not save. Please try again.</string>
+
+    <!-- Payment screen -->
+    <string name="error_select_month_and_year">Select a month and a year</string>
+    <string name="payment_saved">Payment saved</string>
+    <string name="title_edit_payment">Edit Payment</string>
+    <string name="title_delete_payment">Delete Payment</string>
+    <string name="confirm_delete_payment">Delete this payment record?</string>
+    <string name="payment_updated">Payment updated</string>
+    <string name="payment_deleted">Payment deleted</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+
+    <!-- Ledger dialog -->
+    <string name="error_select_ledger_type">Select credit or debit</string>
+    <!-- Required wording for the approved insufficient balance rule. -->
+    <string name="error_insufficient_balance">Saldo tidak mencukupi</string>
+    <string name="title_add_ledger">Add Ledger Entry</string>
+    <string name="title_edit_ledger">Edit Ledger Entry</string>
+    <string name="title_delete_ledger">Delete Transaction</string>
+    <string name="confirm_delete_ledger">Delete this transaction record?</string>
+    <string name="ledger_updated">Transaction updated</string>
+    <string name="ledger_deleted">Transaction deleted</string>
+    <string name="hint_date">Date</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_amount">Amount</string>
+    <string name="label_transaction_type">Transaction Type</string>
+    <string name="label_credit">Credit (Expense)</string>
+    <string name="label_debit">Debit (Income)</string>
+    <string name="cd_payment_actions">Payment options</string>
+    <string name="cd_ledger_actions">Transaction options</string>
+
+    <!-- Balance (report header) -->
+    <string name="balance_label">Current balance</string>
+    <!-- Fund Report summary; %1$s is the formatted Rupiah amount.
+         debit = Pemasukan = income, credit = Pengeluaran = expense. -->
+    <string name="total_income_label">Total Income %1$s</string>
+    <string name="total_expense_label">Total Expenses %1$s</string>
+    <!-- Shown only until the first successful read, so a real value is never
+         mistaken for a zero balance. -->
+    <string name="balance_placeholder">—</string>
+    <string name="error_load_balance_failed">Could not load the balance</string>
+
+    <!-- Student management -->
+    <string name="action_edit_student">Edit name</string>
+    <string name="action_delete_student">Delete</string>
+    <string name="action_save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_edit_student">Edit Student</string>
+    <string name="title_delete_student">Delete Student</string>
+    <string name="title_delete_blocked">Student not deleted</string>
+    <string name="student_updated">Student updated</string>
+    <string name="student_deleted">Student deleted</string>
+    <string name="error_update_student_failed">Could not update the student</string>
+    <string name="error_delete_student_failed">Could not delete the student</string>
+    <string name="confirm_delete_student_no_history">Remove %1$s from the student list? This student has no payment history.</string>
+    <plurals name="error_student_has_history">
+        <item quantity="one">This student has %1$d payment record. Payment history is financial data and is never deleted, so the student record has been kept.</item>
+        <item quantity="other">This student has %1$d payment records. Payment history is financial data and is never deleted, so the student record has been kept.</item>
+    </plurals>
+
+    <!-- Content descriptions -->
+    <string name="cd_student_avatar">Student</string>
+    <string name="cd_student_open">Open payment history</string>
+    <string name="cd_student_actions">Student options</string>
+
+    <!-- Profile popup -->
+    <string name="profile_title">ClassFund</string>
+    <string name="profile_admin">Admin</string>
+    <string name="action_log_out">Log out</string>
+    <string name="message_logged_out">Logged out</string>
+    <string name="setting_dark_mode">Dark Mode</string>
+    <string name="setting_language">Language</string>
+    <string name="lang_en">EN</string>
+    <string name="lang_id">ID</string>
+    <string name="cd_profile_menu">Open profile menu</string>
+    <string name="cd_close">Close</string>
+</resources>

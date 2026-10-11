@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="translucent_white">#40FFFFFF</color>
+    <color name="translucent_purple">#806650A3</color>
+    <color name="splash_background">#6650A3</color>
+
+    <!-- Light Theme Palette -->
+    <color name="md_theme_light_primary">#6750A4</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#EADDFF</color>
+    <color name="md_theme_light_onPrimaryContainer">#21005D</color>
+    <color name="md_theme_light_secondary">#625B71</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#E8DEF8</color>
+    <color name="md_theme_light_onSecondaryContainer">#1D192B</color>
+    <color name="md_theme_light_surface">#FEF7FF</color>
+    <color name="md_theme_light_onSurface">#1D1B20</color>
+    <color name="md_theme_light_surfaceVariant">#E7E0EC</color>
+    <color name="md_theme_light_onSurfaceVariant">#49454F</color>
+
+    <!-- Dark Theme Palette -->
+    <color name="md_theme_dark_primary">#D0BCFF</color>
+    <color name="md_theme_dark_onPrimary">#381E72</color>
+    <color name="md_theme_dark_primaryContainer">#4F378B</color>
+    <color name="md_theme_dark_onPrimaryContainer">#EADDFF</color>
+    <color name="md_theme_dark_secondary">#CCC2DC</color>
+    <color name="md_theme_dark_onSecondary">#332D41</color>
+    <color name="md_theme_dark_secondaryContainer">#4A4458</color>
+    <color name="md_theme_dark_onSecondaryContainer">#E8DEF8</color>
+    <color name="md_theme_dark_surface">#141218</color>
+    <color name="md_theme_dark_onSurface">#E6E0E9</color>
+    <color name="md_theme_dark_surfaceVariant">#49454F</color>
+    <color name="md_theme_dark_onSurfaceVariant">#CAC4D0</color>
+
+    <!-- Profile popup palette (charcoal + electric cyan). Hex lives here so
+         layouts reference @color resources instead of hardcoded values. -->
+    <color name="profile_sheet_background">#FF121212</color>
+    <color name="profile_card_background">#FF1E1E1E</color>
+    <color name="profile_text_primary">#FFFFFFFF</color>
+    <color name="profile_text_secondary">#B3FFFFFF</color>
+    <color name="profile_accent">#FF03DAC6</color>
+    <color name="profile_on_accent">#FF000000</color>
+</resources>

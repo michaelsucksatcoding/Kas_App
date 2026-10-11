@@ -1,0 +1,71 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Kas_App" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Explicit Light Theme Palette -->
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_light_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_light_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_light_onSurfaceVariant</item>
+
+        <item name="fontFamily">@font/plus_jakarta_sans</item>
+        <item name="android:fontFamily">@font/plus_jakarta_sans</item>
+
+        <!-- Global TextInputLayout Style -->
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout.OutlinedBox</item>
+    </style>
+
+    <style name="Widget.App.TextInputLayout.OutlinedBox" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <style name="Theme.Kas_App" parent="Base.Theme.Kas_App" />
+
+    <!-- Splash screen theme using AndroidX SplashScreen API -->
+    <style name="Theme.Kas_App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.Kas_App</item>
+    </style>
+
+    <!-- Main toolbar title. -->
+    <style name="TextAppearance.Kas_App.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <!-- Circular mask for the toolbar profile image. -->
+    <style name="ShapeAppearance.Kas_App.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <!-- Profile sheet inherits the DayNight theme from the parent BottomSheetDialog. -->
+    <style name="ThemeOverlay.Kas_App.ProfileSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+    </style>
+
+    <!--
+      Payment form sheet.
+
+      On Android 15+ (which this app targets) edge-to-edge is enforced and the
+      framework no longer pads the window for the IME. The dialog therefore stays
+      edge-to-edge (Material only installs its bottom-sheet inset machinery,
+      including lifting the sheet above the keyboard via
+      paddingBottomSystemWindowInsets, when enableEdgeToEdge is true). The
+      remaining work - scrolling the focused field and the Save button into view -
+      is done in StudentPaymentBottomSheet/KeyboardInsets. A transparent
+      navigation bar keeps older API levels edge-to-edge too.
+    -->
+    <style name="ThemeOverlay.Kas_App.PaymentSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="enableEdgeToEdge">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>
