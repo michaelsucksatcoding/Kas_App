@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Welcome/splash illustration: a central coin bearing a "C", a few smaller
+  coins and soft decorative circles. Colours come from theme attributes
+  (?attr/colorPrimary etc.) so the artwork stays legible on both the light and
+  dark themes without duplicated night assets. The background is transparent.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Soft background blobs -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.10"
+        android:pathData="M44,44 m-64,0 a64,64 0 1,0 128,0 a64,64 0 1,0 -128,0" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.10"
+        android:pathData="M168,166 m-48,0 a48,48 0 1,0 96,0 a48,48 0 1,0 -96,0" />
+
+    <!-- Floating dots -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.25"
+        android:pathData="M168,44 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.20"
+        android:pathData="M30,152 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.30"
+        android:pathData="M176,148 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0" />
+
+    <!-- Small coins around the hero coin -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.55"
+        android:pathData="M44,52 m-15,0 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0" />
+    <path
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeAlpha="0.45"
+        android:strokeWidth="2"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M44,52 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0" />
+
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.85"
+        android:pathData="M160,60 m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0" />
+    <path
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeAlpha="0.5"
+        android:strokeWidth="3"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M160,60 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.60"
+        android:pathData="M150,156 m-13,0 a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0" />
+    <path
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeAlpha="0.40"
+        android:strokeWidth="2"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M150,156 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0" />
+
+    <!-- Hero coin -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M100,102 m-46,0 a46,46 0 1,0 92,0 a46,46 0 1,0 -92,0" />
+    <path
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeAlpha="0.55"
+        android:strokeWidth="3"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M100,102 m-35,0 a35,35 0 1,0 70,0 a35,35 0 1,0 -70,0" />
+    <path
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M117.3,115.5 A22,22 0 1 1 117.3,88.5" />
+</vector>

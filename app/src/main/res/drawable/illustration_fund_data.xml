@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Stacked coins (lightest at the back, solid on top) -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.30"
+        android:pathData="M50,86 m-33,0 a33,11 0 1,0 66,0 a33,11 0 1,0 -66,0" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.45"
+        android:pathData="M50,68 m-33,0 a33,11 0 1,0 66,0 a33,11 0 1,0 -66,0" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.60"
+        android:pathData="M50,50 m-33,0 a33,11 0 1,0 66,0 a33,11 0 1,0 -66,0" />
+    <path
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeAlpha="0.50"
+        android:strokeWidth="2.5"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M50,50 m-23,0 a23,6.5 0 1,0 46,0 a23,6.5 0 1,0 -46,0" />
+
+    <!-- Add badge -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M88,36 m-21,0 a21,21 0 1,0 42,0 a21,21 0 1,0 -42,0" />
+    <path
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeWidth="7"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M77,36 L99,36" />
+    <path
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeWidth="7"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M88,25 L88,47" />
+</vector>

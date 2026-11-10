@@ -9,11 +9,11 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.os.LocaleListCompat;
 
@@ -33,8 +33,8 @@ import java.util.Locale;
  * from {@code R.string.welcome_back} (so the existing EN/ID switch drives it),
  * wear the Borel font, take its colour from the theme's {@code colorOnPrimary}
  * so it stays readable on the light header in light mode and on the dark
- * header in dark mode, and sit centred in the hero gap without touching the
- * Fund Data card.
+ * header in dark mode, and sit centred below the logo/profile row without
+ * touching the Fund Data card.
  *
  * <p>The language and night-mode tests drive the same mechanisms the profile
  * sheet uses at runtime (saved locale preference + {@link AppCompatDelegate}),
@@ -183,43 +183,54 @@ public class MainScreenGreetingTest {
     }
 
     @Test
-    public void greetingStaysClearOfTheToolbarAndFundDataCard() {
+    public void greetingSitsBelowTheBrandRowAndIsCentred() {
         try (ActivityController<MainActivity> controller =
                      Robolectric.buildActivity(MainActivity.class)) {
             MainActivity activity = controller.setup().get();
 
             TextView greeting = activity.findViewById(R.id.tvGreeting);
+            View brandRow = activity.findViewById(R.id.headerBrandRow);
             View header = activity.findViewById(R.id.viewHeaderBackground);
+            View expandedHeader = activity.findViewById(R.id.headerExpandedContent);
             View cardFundData = activity.findViewById(R.id.cardFundData);
-            Toolbar toolbar = activity.findViewById(R.id.toolbarMain);
 
-            View parent = (View) greeting.getParent();
-
-            assertTrue("greeting must sit below the toolbar region",
-                    greeting.getTop() >= 0);
-            assertTrue("greeting must not overlap the Fund Data card",
-                    greeting.getBottom() <= cardFundData.getTop());
+            assertNotNull("greeting must inflate", greeting);
+            assertNotNull("the brand row must inflate", brandRow);
+            assertNotNull("the expanded header must inflate", expandedHeader);
             assertTrue("greeting box must have a real height",
                     greeting.getHeight() > 0);
 
-            // The toolbar and the greeting live in different parents, so the
-            // comparison has to happen in screen coordinates.
-            int[] toolbarLocation = new int[2];
-            toolbar.getLocationOnScreen(toolbarLocation);
+            // The greeting now lives in the collapsing app bar, while the cards
+            // live in the scrolling content, so compare screen coordinates.
             int[] greetingLocation = new int[2];
             greeting.getLocationOnScreen(greetingLocation);
-            assertTrue("greeting must not be drawn under the toolbar",
+            int[] brandRowLocation = new int[2];
+            brandRow.getLocationOnScreen(brandRowLocation);
+            int[] headerLocation = new int[2];
+            header.getLocationOnScreen(headerLocation);
+            int[] cardLocation = new int[2];
+            cardFundData.getLocationOnScreen(cardLocation);
+
+            assertTrue("greeting must sit below the logo/profile row",
                     greetingLocation[1]
-                            >= toolbarLocation[1] + toolbar.getHeight());
+                            >= brandRowLocation[1] + brandRow.getHeight());
+            assertTrue("greeting must stay above the Fund Data card",
+                    greetingLocation[1] + greeting.getHeight()
+                            <= cardLocation[1]);
+            assertTrue("greeting must stay inside the expanded header",
+                    greetingLocation[1] >= headerLocation[1]
+                            && greetingLocation[1] + greeting.getHeight()
+                            <= headerLocation[1] + header.getHeight());
 
-            int greetingCentreY = (greeting.getTop() + greeting.getBottom()) / 2;
-            int heroCentreY = (header.getTop() + cardFundData.getTop()) / 2;
-            assertEquals("greeting must be vertically centred in the hero gap",
-                    heroCentreY, greetingCentreY, 2);
-
-            int greetingCentreX = (greeting.getLeft() + greeting.getRight()) / 2;
-            assertEquals("greeting must be horizontally centred",
-                    parent.getWidth() / 2, greetingCentreX, 2);
+            assertEquals("greeting must start at the header content inset",
+                    expandedHeader.getPaddingLeft(), greeting.getLeft());
+            assertEquals("greeting must span the full header content width",
+                    expandedHeader.getWidth() - expandedHeader.getPaddingLeft()
+                            - expandedHeader.getPaddingRight(),
+                    greeting.getWidth());
+            assertEquals("greeting text must be horizontally centred",
+                    Gravity.CENTER_HORIZONTAL,
+                    greeting.getGravity() & Gravity.HORIZONTAL_GRAVITY_MASK);
         }
     }
 

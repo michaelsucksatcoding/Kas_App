@@ -3,6 +3,7 @@ package com.example.kas_app;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -15,10 +16,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.graphics.ColorUtils;
 import androidx.core.os.LocaleListCompat;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.color.MaterialColors;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import java.util.Locale;
 
@@ -81,10 +87,18 @@ public class MainActivity extends AppCompatActivity {
             tvGreeting.setTypeface(borel);
         }
 
-        setSupportActionBar(findViewById(R.id.toolbarMain));
+        MaterialToolbar toolbar = findViewById(R.id.toolbarMain);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            // The compact ClassFund title is a custom toolbar child so its
+            // alpha can follow the collapse offset. Hide the framework title.
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
 
-        View btnProfile = findViewById(R.id.btnProfile);
+        ShapeableImageView btnProfile = findViewById(R.id.btnProfile);
         btnProfile.setOnClickListener(v -> showProfileSheet());
+
+        setUpCollapsingHeader(toolbar, btnProfile);
 
         MaterialCardView cardFundData = findViewById(R.id.cardFundData);
         MaterialCardView cardFundReport = findViewById(R.id.cardFundReport);
@@ -113,6 +127,47 @@ public class MainActivity extends AppCompatActivity {
 
         cardCredits.setOnClickListener(creditsListener);
         findViewById(R.id.btnOpenCredits).setOnClickListener(creditsListener);
+    }
+
+    /**
+     * Keeps the hero content and the compact toolbar title in step with the
+     * AppBarLayout collapse offset. The AppBarLayout itself handles the height
+     * change and the surface-coloured content scrim, so no layout is recreated
+     * while scrolling.
+     */
+    private void setUpCollapsingHeader(MaterialToolbar toolbar,
+                                       ShapeableImageView profileButton) {
+        AppBarLayout appBar = findViewById(R.id.appBarMain);
+        View expandedContent = findViewById(R.id.headerExpandedContent);
+        View compactTitle = findViewById(R.id.tvToolbarTitle);
+
+        int onPrimary = MaterialColors.getColor(
+                toolbar, com.google.android.material.R.attr.colorOnPrimary);
+        int onSurface = MaterialColors.getColor(
+                toolbar, com.google.android.material.R.attr.colorOnSurface);
+
+        // Expanded state: the toolbar sits over the purple hero, so its action
+        // icon uses onPrimary. It blends to onSurface as the scrim appears.
+        profileButton.setImageTintList(ColorStateList.valueOf(onPrimary));
+        compactTitle.setAlpha(0f);
+        expandedContent.setAlpha(1f);
+
+        appBar.addOnOffsetChangedListener((layout, verticalOffset) -> {
+            int scrollRange = layout.getTotalScrollRange();
+            float fraction = scrollRange == 0
+                    ? 0f
+                    : Math.min(1f, Math.abs(verticalOffset) / (float) scrollRange);
+
+            expandedContent.setAlpha(1f - fraction);
+
+            // Delay the compact title until the surface scrim has mostly faded
+            // in; otherwise dark title text briefly sits on the purple hero.
+            float titleFraction = Math.max(0f, (fraction - 0.35f) / 0.65f);
+            compactTitle.setAlpha(titleFraction * titleFraction);
+
+            profileButton.setImageTintList(ColorStateList.valueOf(
+                    ColorUtils.blendARGB(onSurface, onPrimary, 1f - fraction)));
+        });
     }
 
     private void showProfileSheet() {

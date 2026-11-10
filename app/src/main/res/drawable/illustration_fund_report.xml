@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Baseline -->
+    <path
+        android:strokeColor="?attr/colorPrimary"
+        android:strokeAlpha="0.30"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M12,93 L108,93" />
+
+    <!-- Bars, growing taller to suggest progress -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.45"
+        android:pathData="M14,92 L14,69 Q14,64 19,64 L25,64 Q30,64 30,69 L30,92 Z" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.65"
+        android:pathData="M36,92 L36,55 Q36,50 41,50 L47,50 Q52,50 52,55 L52,92 Z" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.85"
+        android:pathData="M58,92 L58,41 Q58,36 63,36 L69,36 Q74,36 74,41 L74,92 Z" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M80,92 L80,27 Q80,22 85,22 L91,22 Q96,22 96,27 L96,92 Z" />
+
+    <!-- Upward trend line with a marker at its tip -->
+    <path
+        android:strokeColor="?attr/colorSecondary"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M22,58 L44,44 L66,30 L88,16" />
+    <path
+        android:fillColor="?attr/colorSecondary"
+        android:pathData="M88,16 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+</vector>
