@@ -32,6 +32,16 @@
             android:orientation="vertical"
             android:padding="24dp">
 
+            <ImageView
+                android:id="@+id/ivCreditsHeader"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/cd_credits_illustration"
+                android:scaleType="fitCenter"
+                android:src="@drawable/credits" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

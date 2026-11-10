@@ -34,13 +34,16 @@
     <!-- Splash screen theme using AndroidX SplashScreen API -->
     <style name="Theme.Kas_App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/splash_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_emblem</item>
         <item name="postSplashScreenTheme">@style/Theme.Kas_App</item>
     </style>
 
     <!-- Main toolbar title. -->
     <style name="TextAppearance.Kas_App.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:fontFamily">@font/whitney_regular</item>
+        <item name="fontFamily">@font/whitney_regular</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Circular mask for the toolbar profile image. -->

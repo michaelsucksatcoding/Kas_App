@@ -24,7 +24,19 @@
         app:navigationIconTint="@color/white"
         app:title="@string/fund_report"
         app:titleCentered="true"
-        app:titleTextColor="@color/white" />
+        app:titleTextColor="@color/white">
+
+        <ImageView
+            android:id="@+id/ivFundReportHeader"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/cd_fund_report_illustration"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fund_report" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <TextView
         android:id="@+id/tvTotalIncome"

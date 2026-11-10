@@ -82,6 +82,10 @@
     </plurals>
 
     <!-- Content descriptions -->
+    <string name="cd_splash_emblem">ClassFund coin emblem</string>
+    <string name="cd_fund_data_illustration">Fund data token stack illustration</string>
+    <string name="cd_fund_report_illustration">Fund report chart illustration</string>
+    <string name="cd_credits_illustration">Credits student profiles illustration</string>
     <string name="cd_student_avatar">Student</string>
     <string name="cd_student_open">Open payment history</string>
     <string name="cd_student_actions">Student options</string>

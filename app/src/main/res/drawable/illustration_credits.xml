@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Left teammate (behind) -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.45"
+        android:pathData="M26,58 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.45"
+        android:pathData="M11,96 C11,79 17,70 26,70 C35,70 41,79 41,96 Z" />
+
+    <!-- Right teammate (behind) -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.45"
+        android:pathData="M94,58 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:fillAlpha="0.45"
+        android:pathData="M79,96 C79,79 85,70 94,70 C103,70 109,79 109,96 Z" />
+
+    <!-- Centre teammate (front) -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M60,42 m-13,0 a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0" />
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M35,96 C35,71 44,59 60,59 C76,59 85,71 85,96 Z" />
+</vector>

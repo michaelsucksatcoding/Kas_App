@@ -78,6 +78,10 @@
     </plurals>
 
     <!-- Content descriptions -->
+    <string name="cd_splash_emblem">Emblem koin ClassFund</string>
+    <string name="cd_fund_data_illustration">Ilustrasi tumpukan token data dana</string>
+    <string name="cd_fund_report_illustration">Ilustrasi grafik laporan dana</string>
+    <string name="cd_credits_illustration">Ilustrasi profil siswa kredit</string>
     <string name="cd_student_avatar">Siswa</string>
     <string name="cd_student_open">Buka riwayat pembayaran</string>
     <string name="cd_student_actions">Opsi siswa</string>
